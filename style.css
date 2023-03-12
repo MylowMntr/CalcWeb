@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+body{
+    padding:0;
+    margin: 0;
+    background: linear-gradient(315deg, #73b3fc, white);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.layout{
+	margin: auto;
+	width: 350px;
+	height: 540px;
+	position: relative;
+	background: linear-gradient(315deg, #73b3fc, white);
+	border-radius: 20px;
+   justify-content: center;
+	box-shadow: 2px 2px 15px #73b3fc;
+}
+
+.calculator{
+    height: 500px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: minmax(100px, auto) repeat(6, 65px);
+}
+
+.calculator > button{
+    margin: 6px;
+    color: #fff;
+    font-size: 2rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.span-two{
+    grid-column: span 2;
+    height: 90%;
+    width: 95%;
+    border-radius: 5em;
+}
+
+button{
+    border-radius: 50%;
+    border: none;
+	 background: linear-gradient(315deg, #73b3fc, white);
+	 box-shadow: 2px 2px 6px #73b3fc;
+}
+
+button:active{
+	background: linear-gradient(315deg, white, #73b3fc);
+}
+
+button:hover{
+    background: linear-gradient(315deg, white, #73b3fc);
+}
+
+button:active{
+    background: linear-gradient(315deg, #73b3fc, white);
+}
+
+.output{
+    grid-column: 1/ -1;
+    box-shadow : inset -2px -2px 10px #73b3fc;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+	 flex-direction:column;
+	 padding: 0px 20px;
+	 word-wrap: break-word;
+	 word-break: break-all;
+    border-radius: 30px;
+    margin: 20px 0 20px 0;
+}
+
+
+input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: right;
+    font-size: 2.5rem;
+    color: #fff;
+    outline: none;
+}
