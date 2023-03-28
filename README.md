@@ -8,7 +8,7 @@ Ceci est l'étape 2 du projet.
 La partie 3 et 4 ont été réalisées en totalité.
 
 Voici un visuel de l'application :
-![Image](https://github.com/MylowMntr/CalcWeb/blob/etape2/exemple.png)
+![Image](https://raw.githubusercontent.com/MylowMntr/CalcWeb/etape2/example.png)
  
 
 ---
