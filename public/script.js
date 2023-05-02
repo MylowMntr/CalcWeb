@@ -41,11 +41,11 @@ class BaseCalculator {
         fetch('http://localhost:3000/timer/stop', { method: 'POST' })
             .then(response => response.text())
             .then(text => {
-                console.log(text); // "Timer arrêté. Temps écoulé : 4 secondes."
+                console.log(text); // "4"
 
                 let time = 0;
-                if (!isNaN(text.split(' ')[5])) {
-                    time = text.split(' ')[5];
+                if (!isNaN(text)) {
+                    time = text;
                 }
 
                 const expression = this.display.value;
@@ -55,7 +55,7 @@ class BaseCalculator {
                 fetch('http://localhost:3000/calculate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ expression }),
+                    body: JSON.stringify({ expression, time }),
                 })
                     .then(response => response.json())
                     .then(data => {
@@ -101,6 +101,38 @@ class BaseCalculator {
             this.previous.value = "";
         }
     }
+
+
+
+    stats() {
+        fetch('http://localhost:3000/stats', { method: 'GET' })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // afficher les statistiques
+                this.display.value = "voir console";
+            })
+            .catch(error => {
+                console.error(error);
+                // Gérer les erreurs...
+            }
+            );
+    }
+
+    bdd() {
+        fetch('http://localhost:3000/calculations', { method: 'GET' })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // afficher les statistiques
+                this.display.value = "voir console";
+            })
+            .catch(error => {
+                console.error(error);
+                // Gérer les erreurs...
+            }
+            );
+    }
+
+
 
 }
 

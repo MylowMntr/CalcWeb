@@ -6,9 +6,7 @@
 Ceci est l'étape finale du projet.
 
 
-Les parties 1, 2, 3, 4, et 6 ont été réalisées en totalité.
-
-La partie 5 est en cours de réalisation.  (Connexion à une base de données pour stocker les calculs)
+Les parties 1, 2, 3, 4, 5 et 6 ont été réalisées en totalité.
 
 ---
 
@@ -25,6 +23,8 @@ npm run start
 
 Et pour finir, ouvrir le navigateur à l'adresse :
 http://localhost:3000
+
+Il est possible qu'il faille créer la base de données "à la main" à l'aide du fichier sqlquery.sql.
 
 ---
 Voici un visuel de l'application : (etape2)
