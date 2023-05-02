@@ -29,15 +29,17 @@ export class AppController {
 
 
   private timer: NodeJS.Timeout = null;
-  private seconds = 0;
+  private milliseconds = 0;
 
   @Post('timer/start')
   startTimer(): string {
     if (!this.timer) {
       this.timer = setInterval(() => {
-        this.seconds++;
-        console.log(`Temps écoulé : ${this.seconds} secondes`);
-      }, 1000);
+        // Le setInterval est appelé toutes les 1ms, mais le callback est exécuté toutes les 10ms donc on incrémente de 10
+        this.milliseconds+=10;
+
+        // console.log(`Temps écoulé : ${this.milliseconds} ms`);
+      }, 1);
       return 'Timer démarré';
     } 
     // else {
@@ -50,9 +52,10 @@ export class AppController {
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = null;
-      const elapsedSeconds = this.seconds;
-      this.seconds = 0;
-      return `Timer arrêté. Temps écoulé : ${elapsedSeconds} secondes.`;
+      const elapsedSeconds = this.milliseconds;
+      this.milliseconds = 0;
+
+      return `Timer arrêté. Temps écoulé : ${elapsedSeconds} ms.`;
     } else {
       return 'Le timer n\'est pas en cours';
     }

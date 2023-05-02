@@ -50,7 +50,7 @@ class BaseCalculator {
 
                 const expression = this.display.value;
                 this.history.push(expression);
-                this.previous.value = expression + " =   (" + time + "s)";
+                this.previous.value = expression + " =   (" + time + "ms)";
 
                 fetch('http://localhost:3000/calculate', {
                     method: 'POST',
@@ -106,6 +106,7 @@ class BaseCalculator {
 
 let calc = new BaseCalculator();
 
+// Permet l'arrêt du timer lors du rafraichissement de la page
 window.addEventListener('beforeunload', function (event) {
     event.preventDefault();
     fetch('/calculator/timer/stop', { method: 'POST' })
@@ -117,6 +118,8 @@ window.addEventListener('beforeunload', function (event) {
             console.error(error);
         });
 });
+
+
 
 const inputRegex = /[\d+\-*\/\.\(\)]/; // L'expression régulière pour les entrées claviers autorisées
 
