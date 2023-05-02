@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculatrice</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,9 +50,13 @@
             <button onclick="calc.set('.')">.</button>
             <button onclick="calc.set('0')">0</button>
             <button onclick="calc.answer()" class="span-two action">=</button>
+
+            <!-- Affichage des raccourcis vers les stats et la BDD -->
+            <button class="span-two autre" onclick="calc.stats()">Stats</button>
+            <button class="span-two autre" onclick="calc.bdd()">BDD</button>
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="/script.js"></script>
 
 </html>
